@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> a simple counter </title>
+	</head>
+	<body bgcolor="red">
+		<div class="container">
+			<div class="counter">
+				<p>Actual result :<span id="count">0</span></p>
+			</div>
+			<div>
+				<button onclick="dec()">Decrement</button>
+				<button onclick="inc()">Increment</button>
+			</div>
+			<div class="clicks">
+				<p>Clicks on Increment: <span id="incCount">0</span></p>
+				<p>Clicks on Decrement: <span id="decCount">0</span></p>
+			</div>
+		</div>
+		<h1><a href=http://127.0.0.1:8081> check another webpage </a></h1>
+		<script>
+			let c=0,ci=0,cd=0;
+			const count=document.getElementById("count");
+			const incCount=document.getElementById("incCount");
+			const decCount=document.getElementById("decCount");
+			function inc(){
+				c++;
+				ci=c;
+				update();
+			}
+			function dec(){
+				c--;
+				cd=c;
+				update();
+			}
+			function update(){
+				count.textContent=c;
+				incCount.textContent=ci;
+				decCount.textContent=cd;
+			}
+		</script>
+	</body>
+</html>
