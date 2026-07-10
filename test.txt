@@ -1,2 +1,19 @@
 this is test file in branch
 fixed
+git stash # it is used as a temporary storage
+git stash apply # to use temporary storage to permanent store
+git tag <tag name> <commit id> # to give name to any id
+
+.bashrc is a configuration script where it runs whenever a new terminal or sessions opens 
+
+script <text file> # to start i/o screening
+exit               # to stop and save that text file
+
+tmux
+ctrl+b +%
+ctrl+b+d
+tmux ls
+tmux attach -t <id>
+
+cd - # move to last location
+echo $OLDPWD # we can see here our last location
