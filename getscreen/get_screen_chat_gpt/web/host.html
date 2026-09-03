@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hosting &middot; Mini Remote Desktop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <a href="/" class="back-link">&larr; Back</a>
+
+    <p class="eyebrow">Host</p>
+    <h1>Share your screen</h1>
+    <p class="subtitle">Keep this tab open while you're presenting. Anyone with the room code can watch.</p>
+
+    <div class="card">
+        <p class="card-title">Room</p>
+        <div class="room-code-display">
+            <span class="code" id="roomCode">------</span>
+            <div style="display:flex; gap:8px;">
+                <button class="btn btn-secondary btn-icon" id="copyCode" title="Copy room code" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+                </button>
+                <button class="btn btn-secondary" id="copyLink" type="button">Copy viewer link</button>
+            </div>
+        </div>
+        <div class="status-row">
+            <span class="status-dot connecting" id="statusDot"></span>
+            <span id="statusText">Connecting to signaling server&hellip;</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <p class="card-title">Controls</p>
+        <div class="btn-row" style="margin-top:0;">
+            <button class="btn btn-primary" id="shareButton" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+                Share screen
+            </button>
+            <button class="btn btn-danger" id="stopButton" type="button" disabled>Stop sharing</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <p class="card-title">Preview</p>
+        <div class="video-wrap">
+            <video id="preview" autoplay muted playsinline></video>
+            <div class="video-empty-state" id="previewEmpty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+                <span class="empty-title">Nothing shared yet</span>
+                <span class="empty-sub">Click "Share screen" and choose a window, tab, or your entire display.</span>
+            </div>
+        </div>
+        <div class="video-toolbar">
+            <div class="stat-pills" id="statPills"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <p class="card-title">Viewers (<span id="viewerCount">0</span>)</p>
+        <ul class="viewer-list" id="viewerList"></ul>
+    </div>
+
+</div>
+
+<script type="module" src="js/host.js"></script>
+</body>
+</html>
